@@ -1,0 +1,10 @@
+package planetas;
+
+import recursos.*;
+import utilidades.Aleatorio;
+
+public class volcanico extends Planeta{
+
+	public volca
+	
+}

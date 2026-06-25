@@ -1,0 +1,31 @@
+/*
+• una nave espacial elegida por el usuario.*/
+
+public class Jugador {
+	private String nombre; 
+	private int energia=100;
+	private int creditos = 0;
+	
+	public Jugador(String nombre){
+		this.nombre=nombre;
+	}
+	
+	public void descansar(){
+		energia=100;
+	}
+	
+	
+	public void sumarCreditos(int cantidad){
+		creditos+=cantidad;
+	}
+	
+	public void restarCreditos(int cantidad){
+		creditos-=cantidad;
+	}
+}
+
+
+
+/*------La opción descansar recupera la energía del jugador al 100%.*/
+
+

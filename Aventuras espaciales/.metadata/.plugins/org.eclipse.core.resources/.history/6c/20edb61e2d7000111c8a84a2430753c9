@@ -1,0 +1,13 @@
+package recursos;
+
+public class Plasma extends Recurso{
+	
+	public Plasma(){
+		
+		super(
+				"Mineral Comun",
+				25,
+				45				
+		);		
+	}
+}

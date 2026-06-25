@@ -1,0 +1,15 @@
+package Utilidades;
+
+public class Aleatorio {
+
+	/*minar, daño nave*/
+    public static int generarEntero(int min,int max){
+        return (int)(Math.random()*(max-min+1)+min);
+    }
+
+    /*probabilidad mineral, probabilidad evento*/
+    public static int generarEntero(int max){
+        return generarEntero(0,max-1);
+    }
+	
+}

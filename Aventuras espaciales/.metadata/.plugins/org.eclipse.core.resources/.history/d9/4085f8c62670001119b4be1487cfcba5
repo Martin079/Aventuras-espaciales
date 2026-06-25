@@ -1,0 +1,32 @@
+/*La nave comenzará con:
+• vida al 100%;
+• una bodega vacía para transportar recursos.
+El usuario deberá elegir una nave espacial entre las siguientes:
+1. Fénix
+Velocidad: alta
+Capacidad de carga: 50 toneladas
+Vida inicial: 100%
+2. Eclipse
+Velocidad: media
+Capacidad de carga: 100 toneladas
+Vida inicial: 100%
+3. Galaxian
+Velocidad: baja
+Capacidad de carga: 150 toneladas
+Vida inicial: 100%*/
+
+/*velocidad  nave en enum. 
+ * Cada valor del enum deberá tener asociada
+la probabilidad de que ocurra un peligro espacial durante un viaje??? (que es??).*/
+
+
+public class Nave {
+
+}
+
+
+
+
+/*-----La opción reparar nave permite recuperar vida de la nave. Cada 10% de vida reparada cuesta 25 créditos espaciales.
+El jugador deberá indicar cuántos tramos de 10% desea reparar. No se puede reparar por encima del 100% de vida. Si
+el jugador no tiene créditos suficientes, no podrá reparar la nave.*/

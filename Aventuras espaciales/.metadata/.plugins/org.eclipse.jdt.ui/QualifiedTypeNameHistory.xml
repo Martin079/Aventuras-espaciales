@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="recursos.Recurso"/>
+    <fullyQualifiedTypeName name="utilidades.Aleatorio"/>
+    <fullyQualifiedTypeName name="recursos.Plasma"/>
+    <fullyQualifiedTypeName name="recursos.Cristal"/>
+    <fullyQualifiedTypeName name="recursos.Lava"/>
+    <fullyQualifiedTypeName name="recursos.Obsidiana"/>
+    <fullyQualifiedTypeName name="recursos.NucleoEnergetico"/>
+</qualifiedTypeNameHistroy>
