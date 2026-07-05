@@ -38,6 +38,12 @@ public class Jugador {
 	public void restarCreditos(int cantidad){
 		creditos-=cantidad;
 	}
+	public void restarEnergia(int cantidad) {
+        this.energia -= cantidad;
+        if (this.energia < 0) {
+            this.energia = 0;
+        }
+    }
 }
 
 
