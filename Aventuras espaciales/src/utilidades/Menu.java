@@ -16,6 +16,7 @@ public class Menu {
 		System.out.println("Creditos espaciales: "+jugador.getCreditos());
 		System.out.println("Nombre de la nave: " +nave.getNombre());
 		System.out.println("Velocidad de la nave: " +nave.getVelocidad());
+		System.out.println("Vida de la nave: " + nave.getVida() + "%");
 		System.out.println("Capacidad de carga de la nave: " +nave.getCapacidad());
 		System.out.println("Carga actual en la bodega: " +bodega.calcularPesoActual());
 		System.out.println("-----------------------");
@@ -45,6 +46,7 @@ public class Menu {
 		System.out.println("1- Minar");
 		System.out.println("2- Viajar otro planeta");
 		System.out.println("3- Volver a la base");
+		System.out.println("4- Recursos");
 		System.out.println("-----------------------");
 		System.out.println("");	
 	}
