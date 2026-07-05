@@ -5,6 +5,13 @@ import utilidades.Aleatorio;
 
 public class Rocoso extends Planeta{
 
+	@Override
+    public void mostrarRecursosDisponibles() {
+        System.out.println("Recursos disponibles en el planeta rocoso:");
+        System.out.println("Mineral común: 60%");
+        System.out.println("Cristal: 25%"); 
+        System.out.println("Nucleo energetico: 15%");
+    }
 
 	public Rocoso(){
 		super("Rocoso");
