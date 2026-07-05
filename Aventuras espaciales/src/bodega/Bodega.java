@@ -57,7 +57,7 @@ public class Bodega {
 		return creditosTotales;
 	}
 	
-	public int eliminarRecurso(String nombreRecurso, int cantidadAEliminar){
+	public int eliminarRecurso(Class<? extends Recurso> tipoRecurso, int cantidadAEliminar){
 		
 		int creditosObtenidos = 0;
 		int cantidadEliminada = 0;
@@ -68,7 +68,7 @@ public class Bodega {
 			Recurso r = it.next();
 			
 			
-			if(r.getNombre().equalsIgnoreCase(nombreRecurso)){
+			if(tipoRecurso.isInstance(r)){
 				creditosObtenidos += r.getValorVenta();
 				it.remove();
 				cantidadEliminada++;
@@ -79,10 +79,10 @@ public class Bodega {
 		
 	}
 	
-	public int contarRecurso(String nombreRecurso){
+	public int contarRecurso(Class<? extends Recurso> tipoRecurso){
 		int contador = 0;
 		for(Recurso r : listaRecursos){
-			if(r.getNombre().equalsIgnoreCase(nombreRecurso)){
+			if(tipoRecurso.isInstance(r)){
 				contador++;
 			}
 		}

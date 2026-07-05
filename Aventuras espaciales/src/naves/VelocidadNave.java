@@ -5,13 +5,13 @@ public enum VelocidadNave {
 	MEDIA(40), 
 	ALTA(20);
 	
-	private final int pobabilidadPeligro;
+	private final int probabilidadPeligro;
 	
 	VelocidadNave(int probabilidadPeligro){
-		this.pobabilidadPeligro=probabilidadPeligro;
+		this.probabilidadPeligro=probabilidadPeligro;
 	}
 	
 	public int getProbabilidadPeligro(){
-		return pobabilidadPeligro;
+		return probabilidadPeligro;
 	}
 }

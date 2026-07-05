@@ -1,6 +1,8 @@
 package misiones;
 
 import bodega.Bodega;
+import recursos.Gas;
+import recursos.Plasma;
 
 public class MisionReactor extends Mision {
 
@@ -10,18 +12,18 @@ public class MisionReactor extends Mision {
 	
 	@Override
 	public boolean puedeCompletarse(Bodega bodega){
-		return bodega.contarRecurso("Gas") >=2 && bodega.contarRecurso("Plasma")>=1;
+		return bodega.contarRecurso(Gas.class) >=2 && bodega.contarRecurso(Plasma.class)>=1;
 	}
 	
 	@Override
 	public void descontarRecursos(Bodega bodega){
-		bodega.eliminarRecurso("Gas", 2);
-		bodega.eliminarRecurso("Plasma", 1);
+		bodega.eliminarRecurso(Gas.class, 2);
+		bodega.eliminarRecurso(Plasma.class, 1);
 	}
 	
 	@Override
 	public void mostrarRequisitos(Bodega bodega){
-		System.out.println("Requisitos: 2 Gases (Tenes: " +bodega.contarRecurso("Gas")+") y 1 Plasma (Tenes: "+bodega.contarRecurso("Plasma")+")" );
+		System.out.println("Requisitos: 2 Gases (Tenes: " +bodega.contarRecurso(Gas.class)+") y 1 Plasma (Tenes: "+bodega.contarRecurso(Plasma.class)+")" );
 	}
 
 }

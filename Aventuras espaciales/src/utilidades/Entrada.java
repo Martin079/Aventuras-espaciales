@@ -32,7 +32,21 @@ public class Entrada {
     }
 
     public String ingresarTexto(){
-        return s.nextLine();
+        String texto = "";
+        boolean error = false;
+
+        do {
+            error = false;
+            texto = s.nextLine();
+            
+           
+            if (texto.trim().isEmpty()) {
+                System.out.print("El texto no puede estar vacío");
+                error = true;
+            }
+        } while (error);
+
+        return texto.trim();
     }
 
     public void cerrarScanner(){

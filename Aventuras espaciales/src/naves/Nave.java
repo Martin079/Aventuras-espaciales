@@ -51,4 +51,7 @@ public class Nave {
 			this.vida=100;
 		}
 	}
+		public Bodega getBodega() {
+        return this.bodega;
+    }
 }

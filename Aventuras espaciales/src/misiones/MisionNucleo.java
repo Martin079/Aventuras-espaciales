@@ -1,6 +1,8 @@
 package misiones;
 
 import bodega.Bodega;
+import recursos.NucleoEnergetico;
+import recursos.Obsidiana;
 
 public class MisionNucleo extends Mision {
 
@@ -10,18 +12,18 @@ public class MisionNucleo extends Mision {
 	
 	@Override
 	public boolean puedeCompletarse(Bodega bodega){
-		return bodega.contarRecurso("Nucleo Energetico") >=1 && bodega.contarRecurso("Obsidiana")>=2;
+		return bodega.contarRecurso(NucleoEnergetico.class) >=1 && bodega.contarRecurso(Obsidiana.class)>=2;
 	}
 	
 	@Override
 	public void descontarRecursos(Bodega bodega){
-		bodega.eliminarRecurso("Nucleo Energetico", 1);
-		bodega.eliminarRecurso("Obsidiana", 2);
+		bodega.eliminarRecurso(NucleoEnergetico.class, 1);
+		bodega.eliminarRecurso(Obsidiana.class, 2);
 	}
 	
 	@Override
 	public void mostrarRequisitos(Bodega bodega){
-		System.out.println("Requisitos: Nucleo energetico (Tenes: " +bodega.contarRecurso("Nucleo Energetico")+") y 1 Obsidiana (Tenes: "+bodega.contarRecurso("Obsidiana")+")" );
+		System.out.println("Requisitos: Nucleo energetico (Tenes: " +bodega.contarRecurso(NucleoEnergetico.class)+") y 1 Obsidiana (Tenes: "+bodega.contarRecurso(Obsidiana.class)+")" );
 	}
 
 }

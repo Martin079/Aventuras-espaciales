@@ -5,6 +5,14 @@ import utilidades.Aleatorio;
 
 public class Volcanico extends Planeta{
 
+	@Override
+    public void mostrarRecursosDisponibles() {
+        System.out.println("Recursos disponibles en el planeta Volcanico:");
+        System.out.println("Lava: 50%");
+        System.out.println("Obsidiana: 30%");
+        System.out.println("Nucleo energético: 20%");
+    }
+
 	public Volcanico(){
 		super("Volcanico");
 	}
