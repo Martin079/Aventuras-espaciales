@@ -16,4 +16,6 @@ public abstract class Planeta {
 	public abstract Recurso minar();
 	
 	public abstract void mostrarRecursosDisponibles();
+	
+	
 }

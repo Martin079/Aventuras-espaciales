@@ -40,7 +40,7 @@ public class Bodega {
 			System.out.println("-------------------");
 			System.out.println("Contenido de la bodega:");
 			for(Recurso r : listaRecursos){
-				System.out.println("Recurso: " +r.getNombre() + "Peso: " + r.getPeso() + "Valor: " +r.getValorVenta());
+				System.out.println("Recurso: " +r.getNombre() + " Peso: " + r.getPeso() + " Valor: " +r.getValorVenta());
 			}
 		}
 	}

@@ -1,7 +1,9 @@
 package utilidades;
 
 import jugador.Jugador;
+import misiones.Mision;
 import naves.Nave;
+import java.util.ArrayList;
 import bodega.Bodega;
 import planetas.Planeta;
 
@@ -50,4 +52,35 @@ public class Menu {
 		System.out.println("-----------------------");
 		System.out.println("");	
 	}
+	
+    public void mostrarResumenFinal(Jugador jugador, Nave nave, ArrayList<Mision> listaMisiones, String resultado) {
+        System.out.println("\n______________________________________________");
+        System.out.println("           RESUMEN FINAL DE LA PARTIDA       ");
+        System.out.println("Nombre del jugador : " + jugador.getNombre()); 
+        System.out.println("Nave utilizada        : " + nave.getNombre());
+        System.out.println("Creditos obtenidos    : " + jugador.getCreditos()); 
+        
+        int misionesCompletadas = 0;
+        for (Mision m : listaMisiones) {
+            if (m.isCompletada()) {
+                misionesCompletadas++;
+            }
+        }
+        System.out.println("Misiones completadas  : " + misionesCompletadas + " / 3");
+        
+        System.out.println("\nRecursos restantes en la bodega:"); 
+        nave.getBodega().mostrarContenido();
+        System.out.println("");
+        
+        if (resultado.equals("Victoria")) {
+            System.out.println("GANASTE!!! Lograste reparar la estación espacial!!. ");
+        } else if (resultado.equals("Derrota")) {
+            System.out.println("PERDISTE. Tu nave fue destruida.");
+        } else {
+            System.out.println("Saliste voluntariamente de la partida.");
+        }
+        
+        System.out.println("Gracias por jugar");
+        System.out.println("______________________________________________\n");
+    }
 }

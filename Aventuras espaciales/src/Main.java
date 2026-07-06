@@ -12,6 +12,8 @@ import misiones.Mision;
 import misiones.MisionCasco;
 import misiones.MisionReactor;
 import misiones.MisionNucleo;
+import planetas.*;
+import recursos.*;
 
 public class Main {
 
@@ -47,22 +49,54 @@ public class Main {
         listaMisiones.add(new MisionNucleo());
 
         boolean jugando = true;
+        
+        String resultadoFinal = "Salida voluntaria";
 
         while(jugando) {
+        	
+        	if (nave.getVida() <= 0) { // 
+                resultadoFinal = "Derrota";
+                jugando = false;
+                break;
+            }
+            
+            boolean todasCompletadas = true;
+            for (Mision m : listaMisiones) {
+                if (!m.isCompletada()) {
+                    todasCompletadas = false;
+                    break;
+                }
+            }
+            
+            if (todasCompletadas) {
+                resultadoFinal = "Victoria"; // 
+                jugando = false;
+                break;
+            }        	
+        	
             menu.mostrarDatos(jugador, nave, bodega);;
             menu.menuBaseEspacial();
             int opcion = entrada.ingresarEntero(1, 8); 
             
             switch (opcion) {
-                case 1:
-                    System.out.println("En desarrollo...");
-                    break;
+            case 1:
+               
+                String estadoViaje = controladores.GestorViajes.gestionarViaje(jugador, nave, bodega, entrada, menu);
+                
+                if (estadoViaje.equals("Derrota")) {
+                    resultadoFinal = "Derrota";
+                    jugando = false;
+                }
+                break;
+                
                 case 2:
                     bodega.mostrarContenido();
                     break;
+                    
                 case 3:
                     System.out.println("En desarrollo...");
                     break;
+                    
                 case 4:
                     System.out.println("\n Misiones de la estacion espacial:");
                     for (int i = 0; i < listaMisiones.size(); i++) {
@@ -71,20 +105,24 @@ public class Main {
                     }
                     System.out.println("");
                     break;
+                    
                 case 5:
-                    System.out.println("Que misiones queres entregar?");
+                    System.out.println("Que misiones queres entregar? (1-3)");
                     int numMision = entrada.ingresarEntero(1, 3);
 
                     Mision misionSeleccionada = listaMisiones.get(numMision - 1);
                     misionSeleccionada.entregarMision(bodega, jugador);
                     break;
+                    
                 case 6:
                     System.out.println("En desarrollo...");
                     break;
+                    
                 case 7:
                     jugador.descansar();
                     System.out.println("Has descansado. Energia restaurada al 100%.");
                     break;
+                    
                 case 8:
                     System.out.println("Saliendo del juego...");
                     jugando = false;
@@ -92,6 +130,10 @@ public class Main {
             }
         }
         
+        menu.mostrarResumenFinal(jugador, nave, listaMisiones, resultadoFinal);
+        
         entrada.cerrarScanner(); 
     }
+    
+    
 }
