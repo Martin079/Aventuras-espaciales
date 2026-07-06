@@ -94,7 +94,7 @@ public class Main {
                     break;
                     
                 case 3:
-                    System.out.println("En desarrollo...");
+                    controladores.ControladorVentas.gestionarVenta(jugador, bodega, entrada);
                     break;
                     
                 case 4:
@@ -115,7 +115,7 @@ public class Main {
                     break;
                     
                 case 6:
-                    System.out.println("En desarrollo...");
+                    controladores.ControladorReparacion.gestionarReparacion(jugador, nave, entrada);
                     break;
                     
                 case 7:
